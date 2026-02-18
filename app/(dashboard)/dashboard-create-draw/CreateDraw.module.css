@@ -1,0 +1,193 @@
+/* ==========================================================================
+   Card and Layout Styles
+   ========================================================================== */
+
+.formCard {
+  background-color: #1a1f4a;
+  border: 1px solid #2c326b;
+  border-radius: 12px; /* Consistent border-radius */
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  margin-bottom: 50px;
+}
+
+.walletStatusBar {
+  background-color: #0f123d;
+  padding: 12px 20px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+  border: 1px solid #2c326b;
+}
+
+.walletStatusBar .statusText {
+  font-weight: 600;
+  color: #a1a6c5;
+}
+
+.walletStatusBar .addressTag {
+  background: linear-gradient(90deg, #ff8c42, #ff5722);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 10px;
+  font-family: monospace;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   Form Specific Styles
+   ========================================================================== */
+
+.formSectionNew {
+  margin-bottom: 40px;
+}
+.formSectionNew:last-of-type {
+  margin-bottom: 20px;
+}
+
+.formSectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.formSectionHeader p {
+  margin: 0;
+  font-weight: 700; /* Bold title like in dashboard */
+  color: #ffffff;
+  font-size: 1.5rem; /* Consistent section heading size */
+}
+
+.formSectionHeader .subtext {
+  font-size: 0.9rem;
+  color: #a1a6c5;
+  margin-left: auto;
+}
+
+.inputGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Default to 2x2 grid */
+  gap: 20px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #a1a6c5;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* === THIS IS THE BLOCK TO REPLACE === */
+.formInput,
+.datetimeDisplay {
+  width: 100%;
+  background: #0f123d;
+  border: 1px solid #2c326b;
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 0 16px; /* Changed padding to control height explicitly */
+  font-size: 1.3rem;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  /* NEW: Explicitly set height for perfect match */
+  height: 48px;
+  /* NEW: Use line-height equal to height to vertically center text */
+  line-height: 48px;
+}
+
+.formInput:focus {
+  outline: none;
+  border-color: #ff8c42;
+  box-shadow: 0 0 0 3px rgba(255, 140, 66, 0.2);
+}
+
+.fileInputLabel {
+  cursor: pointer;
+}
+
+.datetimeInputGroup {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: center;
+}
+
+.datetimeDisplay {
+  text-align: left;
+  cursor: pointer;
+  color: #797d99;
+}
+/* For the div, we still need to reset line-height if it has content, flex is better */
+.datetimeDisplay {
+  display: flex;
+  align-items: center;
+  line-height: 1.5; /* Reset line-height for flex centering */
+}
+
+.datetimeDisplay.hasValue {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.referralGridNew {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+}
+
+.referralInputGroup {
+  position: relative;
+}
+
+.referralInputGroup .percentSign {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a1a6c5;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   Responsive Styles
+   ========================================================================== */
+
+@media (max-width: 991px) {
+  .referralGridNew {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .formCard {
+    padding: 30px;
+  }
+  .inputGrid {
+    grid-template-columns: 1fr; /* Stack main inputs on tablets */
+  }
+  .referralGridNew {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .formCard {
+    padding: 20px;
+  }
+  .referralGridNew {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}

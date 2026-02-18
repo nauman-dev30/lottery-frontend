@@ -1,0 +1,150 @@
+@use "../abstracts/mixin";
+
+.tf-accordion1,
+.tf-accordion {
+    .title-accordion{
+        line-height: 42px;
+        font-weight: 759;
+        padding-bottom: 20px;
+    }
+    .tf-toggle1,
+    .tf-toggle {
+        border-bottom: 1px solid var(--Border);
+        margin-bottom: 22px;
+        .toggle-title {
+            @include mixin.flex(center, space-between);
+
+            padding-bottom: 22px;
+            cursor: pointer;
+            position: relative;
+            @include mixin.transition3();
+            .title {
+                font-size: 18px;
+                font-weight: 550;
+                line-height: 23.81px;
+                color: var(--Secondary);
+            }
+            .icon {
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+                flex: none;
+                background-color: var(--Bg-2);
+                position: relative;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    display: block;
+                    width: 10px;
+                    border: 1px solid var(--White);
+                    border-radius: 1.5px;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+                &::before {
+                    content: "";
+                    position: absolute;
+                    display: block;
+                    height: 10px;
+                    border: 1px solid var(--White);
+                    border-radius: 1.5px;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    @include mixin.transition3();
+                }
+            }
+            &:hover {
+                color: var(--Main-color);
+            }
+            &.active {
+                .icon {
+                    &::before {
+                        visibility: hidden;
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+        .toggle-content {
+            display: none;
+            padding-bottom: 22px;
+            p {
+                font-size: 14px;
+                line-height: 19.6px;
+                color: var(--Secondary);
+            }
+        }
+        &.active {
+            .toggle-title {
+                .title {
+                    color: var(--Main-color);
+                }
+                .icon {
+                    background-color: var(--Main-color);
+                }
+            }
+        }
+    }
+    &.has-bg {
+        .tf-toggle1,
+        .tf-toggle {
+            padding: 10px  0px  10px  10px;  
+            background-color: var(--Bg-2);
+            border: none;
+            border-radius: 16px;
+            margin-bottom: 16px;
+            .toggle-title {
+                padding-bottom: 0;
+                padding-left: 8px ;
+                .title {
+                    @include mixin.d-flex();
+                    align-items: center;
+                    color: var(--White);
+                    gap: 10px;
+                    letter-spacing: 0.4px;
+                    i{
+                        font-size: 26px;
+                    }
+                }
+                .icon {
+                    
+                    background-color: unset;
+                    &::after {
+                        height: 2px;
+                        width: 16px;
+                        border-color: var(--Secondary);
+                    }
+                    &::before {
+                        height: 16px;
+                        width: 1px;
+                        border-color: var(--Secondary);
+                    }
+                }
+            }
+            .toggle-content {
+                padding-top: 16px;
+                margin-top: 9px;
+                border-top: 1px solid var(--Border);
+                padding-bottom: 8px;
+                p{  
+                    font-size: 14px;
+                    line-height: 19.6px;
+                    margin-left: 43px;
+                    margin-right: 11px;
+                }
+            }
+            &.active {
+                .title {
+                    color: var(--Main-color);
+                }
+                .icon {
+                    &::after {
+                        border-color: var(--Main-color);
+                    }
+                }
+            }
+        }
+    }
+}

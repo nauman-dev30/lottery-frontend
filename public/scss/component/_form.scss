@@ -1,0 +1,337 @@
+@use "../abstracts/mixin";
+@use "../abstracts/variable";
+
+form {
+    position: relative;
+    z-index: 30;
+    textarea,
+    input[type="text"],
+    input[type="password"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="date"],
+    input[type="month"],
+    input[type="time"],
+    input[type="week"],
+    input[type="number"],
+    input[type="email"],
+    input[type="username"],
+    input[type="fullName"],
+    input[type="phone"],
+    input[type="url"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="color"] {
+        outline: 0;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        width: 100%;
+        padding: 8px 19px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 28px;
+        background-color: var(--Bg-3);
+        border: 1px solid var(--Border-2);
+        border-radius: 999px;
+        color: var(--Secondary);
+        overflow: hidden;
+        margin-bottom: 0;
+        &::placeholder {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 28px;
+            color: var(--Secondary);
+        }
+        &.style-default {
+            padding: 0;
+            border: 0 !important;
+            border-radius: 0;
+            background-color: transparent;
+        }
+    }
+    button,
+    input[type="button"],
+    input[type="reset"],
+    input[type="submit"] {
+        background-color: transparent;
+        overflow: hidden;
+        padding: 0;
+    }
+    textarea {
+        height: 150px;
+        border-radius: 16px;
+    }
+    .cols {
+        @include mixin.flex(center, center);
+        gap: 10px;
+        width: 100%;
+        &.cols-two {
+            > * {
+                width: 50%;
+            }
+        }
+    }
+    label {
+        margin-bottom: 10px;
+        font-size: 14px;
+        font-weight: 550;
+        line-height: 19.6px;
+        &.mb-0 {
+            margin-bottom: 0px;
+        }
+    }
+    &.style-2 {
+        fieldset input {
+            border-radius: 25px;
+            background-color: var(--White);
+            color: var(--Text-4);
+            height: 54px;
+        }
+        .button-submit {
+            i {
+                color: var(--Bg);
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+fieldset {
+    margin-bottom: 0px;
+    width: 100%;
+}
+
+.tf-field {
+    position: relative;
+}
+.form-search {
+    fieldset input {
+        padding-left: 45px;
+        border-radius: 25px;
+        background-color: var(--White);
+        color: var(--Text-4);
+        height: 54px;
+        &::placeholder {
+            color: var(--Text-4);
+        }
+    }
+    .button-submit {
+        position: absolute;
+        left: 20px;
+        top: 32%;
+        i {
+            color: var(--Bg);
+            font-size: 16px;
+        }
+    }
+    &.style-2 {
+        fieldset input {
+            background-color: var(--Bg-2);
+            padding: 9px 52px 9px 20px;
+            border: 1px solid rgba(147, 172, 211, 0.1);
+            height: 60px;
+            color: var(--White);
+            border-radius: 999px;
+            &::placeholder {
+                font-size: 16px;
+                line-height: 21.17px;
+                // transform: translateY(-10px);
+                color: rgba(85, 101, 126, 1);
+            }
+        }
+        .button-submit {
+            left: unset;
+            right: 20px;
+            i {
+                font-size: 24px;
+                color: var(--White);
+            }
+        }
+    }
+}
+.form-email {
+    .button-submit {
+        position: absolute;
+        right: 17px;
+        top: 32%;
+    }
+}
+
+.checkbox-item {
+    &.mb-10 {
+        margin-bottom: 10px;
+    }
+    label {
+        padding-left: 26px;
+        cursor: pointer;
+        position: relative;
+        input {
+            position: absolute;
+            opacity: 0;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+            &:checked {
+                ~ .btn-checkbox {
+                    &:after {
+                        display: block;
+                    }
+                }
+                ~ .btn-radio {
+                    &:after {
+                        display: block;
+                    }
+                }
+            }
+        }
+        p {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 19.6px;
+            color: var(--Secondary);
+        }
+        .btn-checkbox {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 22px;
+            height: 22px;
+            background-color: transparent;
+            border-radius: 4px;
+            border: 1px solid var(--Border);
+            &:after {
+                content: "\e90f";
+                font-family: variable.$fontIcon !important;
+                position: absolute;
+                font-size: 14px;
+                top: 1px;
+                left: 3px;
+                display: none;
+            }
+        }
+    }
+}
+.form-login,
+.form-register {
+    margin-bottom: 35px;
+    .checkbox-item {
+        @include mixin.flex(center, space-between);
+        margin-bottom: 35px;
+        flex-wrap: wrap;
+        gap: 20px 10px;
+    }
+}
+
+.form-security {
+    .toggle-password {
+        &.first-time {
+            top: 56px;
+        }
+        &.second-time {
+            top: 56px;
+        }
+    }
+}
+.toggle-password {
+    position: absolute;
+    right: 21px;
+    top: 70%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    i {
+        color: var(--Secondary);
+    }
+    &.unshow {
+        &::after {
+            content: "";
+            position: absolute;
+            transform: rotate(-45deg);
+            top: -1px;
+            width: 1px;
+            height: 19px;
+            background-color: var(--Secondary);
+            right: 9px;
+        }
+    }
+}
+.fieldPhoneNumber {
+    input {
+        padding-left: 111px !important;
+    }
+
+    .iti {
+        width: 100%;
+        .iti__flag-container {
+            width: 14%;
+        }
+        .iti__selected-flag {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 19.6px;
+            color: var(--Secondary);
+            padding: 0 10px 0 20px;
+            &.active {
+                &::before {
+                    transform: rotate(-180deg);
+                }
+            }
+            &::before {
+                content: "\e944";
+                font-family: "icomoon";
+                font-size: 16px;
+                position: absolute;
+                left: 55px;
+                transform: rotate(0px);
+                @include mixin.transition3;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                height: 100%;
+                width: 1px;
+                background-color: var(--Border-2);
+                left: 92px;
+            }
+        }
+        .iti__country-list {
+            max-height: 120px;
+            max-width: 300px;
+            overflow-x: hidden;
+            border-radius: 8px;
+            transform: translateY(20px);
+            @include mixin.hidden;
+            @include mixin.transition3;
+            &.show {
+                transform: translateY(0px);
+                @include mixin.visible;
+                @include mixin.transition3;
+            }
+            .iti__country {
+                .iti__country-name,
+                .iti__dial-code {
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 19.6px;
+                    color: var(--Secondary);
+                }
+            }
+        }
+    }
+}
+
+.form-send-message {
+    input {
+        height: 50px;
+    }
+    .button-submit {
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        font-size: 20px;
+        color: var(--Main-color);
+    }
+}

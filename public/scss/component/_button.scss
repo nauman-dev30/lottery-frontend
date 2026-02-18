@@ -1,0 +1,124 @@
+@use "../abstracts/mixin";
+
+.tf-btn {
+    @include mixin.flex(center, center);
+    height: 50px;
+    padding: 0 22px;
+    width: max-content;
+    font-size: 16px;
+    font-weight: 759;
+    line-height: 21.17px;
+    gap: 10px;
+    background: linear-gradient(to left, rgba(254, 140, 69, 1), rgba(202, 40, 38, 1));
+    border-radius: 999px;
+    @include mixin.transition3();
+    &:hover {
+        box-shadow: 0px 70px 2px 0px #fff inset;
+        color: var(--Main-color);
+        &.style-3::after {
+            background: none;
+        }
+        &.node-border-node-backgroud,
+        &.border-node-backgroud {
+            border: 1px solid transparent;
+        }
+    }
+    &.style-lg {
+        padding: 0 50px;
+        font-size: 20px;
+        line-height: 26px;
+        height: 67px;
+    }
+    &.style-3 {
+        position: relative;
+        background-image: unset;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 999px;
+            border: 1px solid transparent;
+            background: linear-gradient(to right, #fe8c45 2.74%, #ca2826 103%) border-box;
+            -webkit-mask:
+                linear-gradient(#fff 0 0) padding-box,
+                linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            background-size: 300% 300%;
+        }
+    }
+    &.style-2 {
+        height: 44px;
+        background: var(--Bg-2);
+        color: var(--Secondary);
+        gap: 5px;
+    }
+    &.full-w {
+        width: 100%;
+    }
+    &.border-node-backgroud {
+        background: transparent;
+        border: 1px solid var(--Main-color);
+    }
+    &.node-border-node-backgroud {
+        background: transparent;
+        border: 1px solid var(--Main-color);
+        border: none !important;
+    }
+    &.pd-0-46 {
+        padding: 0px 46px;
+        &.node-background {
+            background: transparent;
+            border: none !important;
+            padding: 0 !important;
+        }
+    }
+    &.fs-20 {
+        font-size: 20px;
+        i {
+            font-size: 16px;
+        }
+    }
+    &.h-67 {
+        height: 67px;
+    }
+    &.h-46 {
+        height: 46px;
+    }
+    &.h-42 {
+        height: 42px;
+    }
+    &.fs-13 {
+        font-size: 13px;
+    }
+}
+.switch-item[type="checkbox"] {
+    position: relative;
+    width: 46px;
+    min-width: 46px;
+    height: 26px;
+    -webkit-appearance: none;
+
+    border-radius: 999px;
+    @include mixin.transition3();
+    margin-right: 0;
+    &::before {
+        content: "";
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        background: var(--White);
+        @include mixin.transition3();
+    }
+    &:checked {
+        background: var(--Main-color);
+        &::before {
+            left: 20px;
+        }
+    }
+}

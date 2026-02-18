@@ -1,0 +1,205 @@
+/* ==========================================================================
+   Card and Layout Styles
+   ========================================================================== */
+.formCard {
+  background-color: #1a1f4a;
+  border: 1px solid #2c326b;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  margin-bottom: 50px;
+}
+
+.walletStatusBar {
+  background-color: #0f123d;
+  padding: 12px 20px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+  border: 1px solid #2c326b;
+}
+
+.walletStatusBar .statusText {
+  font-weight: 600;
+  color: #a1a6c5;
+}
+
+.walletStatusBar .addressTag {
+  background: linear-gradient(90deg, #ff8c42, #ff5722);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 10px;
+  font-family: monospace;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   Form Specific Styles
+   ========================================================================== */
+.formSectionNew {
+  margin-bottom: 40px;
+}
+.formSectionNew:last-of-type {
+  margin-bottom: 20px;
+}
+
+.formSectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.formSectionHeader p {
+  margin: 0;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.formSectionHeader .subtext {
+  font-size: 0.9rem;
+  color: #a1a6c5;
+  margin-left: auto;
+}
+
+.inputGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #a1a6c5;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Base styles for all form inputs */
+.formInput,
+.datetimeDisplay {
+  width: 100%;
+  height: 48px;
+  background: #0f123d;
+  border: 1px solid #2c326b;
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 0 16px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+/* Style for text inputs */
+.formInput {
+  line-height: 48px;
+}
+/* Style for the date display div */
+.datetimeDisplay {
+  display: flex;
+  align-items: center;
+  line-height: 1.5; /* Reset for flexbox */
+}
+
+/* Specific styles for the <select> element */
+select.formInput {
+  padding-right: 40px; /* Make space for arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23a1a6c5" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  cursor: pointer;
+}
+
+.formInput:focus {
+  outline: none;
+  border-color: #ff8c42;
+  box-shadow: 0 0 0 3px rgba(255, 140, 66, 0.2);
+}
+
+.fileInputLabel {
+  cursor: pointer;
+}
+
+.datetimeInputGroup {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: center;
+}
+
+.datetimeDisplay {
+  text-align: left;
+  cursor: pointer;
+  color: #797d99;
+}
+
+.datetimeDisplay.hasValue {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.referralGridNew {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 20px;
+}
+
+.referralInputGroup {
+  position: relative;
+}
+
+.referralInputGroup .percentSign {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a1a6c5;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   Responsive Styles
+   ========================================================================== */
+
+@media (max-width: 991px) {
+  .inputGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .formCard {
+    padding: 30px;
+  }
+  .inputGrid {
+    grid-template-columns: 1fr;
+  }
+  .referralGridNew {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .formCard {
+    padding: 20px;
+  }
+  .referralGridNew {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}

@@ -1,0 +1,22 @@
+@use "../abstracts/mixin";
+
+.social-sign-list {
+    @include mixin.flex(center, space-between);
+    gap: 16px;
+    margin-bottom: 36px;
+    li {
+        width: 100%;
+        a {
+            @include mixin.flex(center, center);
+            height: 50px;
+            border: 1px solid var(--Border-1);
+            border-radius: 999px;
+            gap: 10px;
+            span {
+                font-size: 14px;
+                font-weight: 645;
+                line-height: 19.6px;
+            }
+        }
+    }
+}

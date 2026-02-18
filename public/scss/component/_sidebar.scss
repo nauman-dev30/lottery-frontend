@@ -1,0 +1,118 @@
+@use "../abstracts/mixin";
+
+.sidebar-dashboard {
+  position: fixed;
+  right: 19px;
+  top: 140px;
+  bottom: 15px;
+  width: 270px;
+  border-radius: 16px;
+  @include mixin.transition3();
+  z-index: 50;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  .wrap-sidebar-dashboard {
+    background-color: var(--Bg-2);
+    padding: 20px;
+    @include mixin.d-flex();
+    flex-direction: column;
+    gap: 40px;
+  }
+  .heading {
+    @include mixin.flex(center, flex-start);
+    gap: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 12px;
+    .icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  .sidebar-contest {
+    .wrap {
+      @include mixin.d-flex();
+      flex-direction: column;
+      gap: 12px;
+    }
+    .contest-item {
+      background-color: #1c1845;
+      border-radius: 16px;
+      padding: 20px;
+      overflow: hidden;
+      .image {
+        width: 80px;
+        margin-bottom: 10px;
+      }
+      .title {
+        font-size: 16px;
+        font-weight: 900;
+        line-height: 21px;
+        margin-bottom: 6px;
+      }
+      .sub-item {
+        @include mixin.flex(center, flex-start);
+        gap: 6px;
+        color: var(--Secondary);
+        &:not(:last-child) {
+          margin-bottom: 3px;
+        }
+        i {
+          font-size: 16px;
+        }
+        p {
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+      &.main {
+        padding: 0;
+        .image {
+          width: 100%;
+          margin-bottom: 0;
+        }
+        .content {
+          padding: 20px;
+        }
+        .title {
+          font-size: 24px;
+          line-height: 32px;
+        }
+        .sub {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+  .sidebar-support {
+    .content {
+      @include mixin.flex(center, center);
+      gap: 10px;
+      margin-bottom: 12px;
+      img {
+        width: 56px;
+      }
+    }
+  }
+}
+
+.button-sidebar-dashboard {
+  display: none;
+  cursor: pointer;
+  .icon {
+    @include mixin.flex(center, center);
+    width: 48px;
+    height: 48px;
+    font-size: 22px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(147, 172, 211, 0.0705882353);
+    box-shadow: 0px 2px 2px 0px rgba(255, 255, 255, 0.02) inset;
+  }
+}

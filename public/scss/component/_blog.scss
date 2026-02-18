@@ -1,0 +1,82 @@
+@use "../abstracts/mixin";
+
+.article-blog-item {
+    padding: 30px;
+    background-color: var(--Bg-2);
+    border-radius: 16px;
+    margin-bottom: 29px;
+    .image-wrap {
+        border-radius: 16px; 
+        margin-bottom: 23px;
+        overflow: hidden;
+    }
+    .content {
+        .title {
+            font-weight: 900;
+            font-size: 24px;
+            line-height: 31.5px;
+            color: var(--White);
+            margin-bottom: 7px;
+        }
+        .meta {
+            @include mixin.d-flex();
+            align-items: center;
+            gap: 11px;
+            margin-bottom: 30px;
+            li {
+                @include mixin.d-flex();
+                gap: 6px;
+                color: var(--Secondary);
+                font-size: 12px;
+                line-height: 16.8px;
+                position: relative;
+                i {
+                    font-size: 16px;
+                }
+                a {
+                    color: var(--Main-color);
+                    &:hover {
+                        color: var(--White);
+                    }
+                }
+                &:not(:last-child) {
+                    padding-right: 11px;
+                    &::after {
+                        position: absolute;
+                        content: "";
+                        right: 0;
+                        width: 1px;
+                        height: 16px;
+                        background-color: rgba(255, 255, 255, 0.1);
+                    }
+                }
+            }
+        }
+        p {
+            font-size: 14px;
+            line-height: 19.6px;
+            color: var(--Secondary);
+        }
+    }
+    &.style-grid {
+        padding: 0;
+        margin-bottom: 0;
+        background: transparent;
+        .wrap-image{
+            margin-bottom: 23px;
+        }
+        .content {
+            text-align: center;
+            .title {
+                font-size: 18px;
+                margin-bottom: 0;
+                font-weight: 645;
+                line-height: 23.81px;
+            }
+            .meta {
+                margin-bottom: 7px;
+                justify-content: center;
+            }
+        }
+    }
+}

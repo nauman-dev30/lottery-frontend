@@ -1,0 +1,487 @@
+/* ==========================================================================
+   Main Card & Layout
+   ========================================================================== */
+.drawsCard {
+  background-color: #1a1f4a;
+  border: 1px solid #2c326b;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================================================
+   Table Styles
+   ========================================================================== */
+.tableWrapper {
+  overflow-x: auto;
+  padding-bottom: 2px; /* Prevent button shadow clipping */
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* Prevent column overlap by fixing column widths */
+}
+
+.table thead {
+  background-color: #0f123d;
+}
+
+.table thead th {
+  padding: 20px 10px;
+  text-align: left;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #a1a6c5;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  border-bottom: 1px solid #2c326b;
+}
+
+.table tbody tr {
+  border-bottom: 1px solid #2c326b;
+  transition: background-color 0.2s ease;
+}
+.table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.table tbody tr:hover {
+  background-color: rgba(44, 50, 107, 0.5);
+}
+
+.table tbody td {
+  padding: 12px 16px;
+  font-size: 1rem;
+  color: #ffffff;
+  vertical-align: middle;
+  overflow: visible; /* Changed from hidden to visible */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Make action columns non-clipping */
+.table tbody td:nth-child(1) {
+  overflow: visible;
+}
+
+.table tbody td:nth-child(8),
+.table tbody td:nth-child(9) {
+  overflow: visible;
+  text-align: center;
+}
+
+.drawIdBadge {
+  background: linear-gradient(90deg, #ff8c42, #ff5722);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-weight: 700;
+  display: inline-block;
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: clip;
+  min-width: fit-content;
+}
+
+.cellWithIcon,
+.dateCell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  color: #a1a6c5;
+  min-width: 0; /* allow flex children to shrink inside table cells */
+}
+
+.cellWithIcon svg {
+  color: #ff8c42;
+  flex-shrink: 0;
+}
+
+.dateCell svg {
+  color: #a1a6c5;
+  flex-shrink: 0;
+}
+
+.bannerPreview {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: #a1a6c5;
+  transition: color 0.2s ease;
+}
+
+.bannerPreview:hover {
+  color: #ff8c42;
+}
+
+.bannerPreview svg {
+  color: #ff8c42;
+  flex-shrink: 0;
+}
+
+.bannerName {
+  margin-left: 8px;
+  font-size: 0.85rem;
+  color: #a1a6c5;
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Allow text inside flex containers to ellipsize properly */
+.cellWithIcon > span,
+.dateCell > span {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+/* Set column width distribution to avoid overlapping */
+.table thead th:nth-child(1) {
+  width: 7%;
+}
+.table thead th:nth-child(2) {
+  width: 20%;
+}
+.table thead th:nth-child(3) {
+  width: 9%;
+}
+.table thead th:nth-child(4) {
+  width: 9%;
+}
+.table thead th:nth-child(5) {
+  width: 14%;
+}
+.table thead th:nth-child(6) {
+  width: 14%;
+}
+.table thead th:nth-child(7) {
+  width: 12%;
+}
+.table thead th:nth-child(8) {
+  width: 8%;
+}
+.table thead th:nth-child(9) {
+  width: 6%;
+}
+
+.chevron {
+  transition: transform 0.3s ease;
+  margin-left: 6px;
+}
+
+.chevron.rotated {
+  transform: rotate(180deg);
+}
+
+/* ==========================================================================
+   Action Buttons Container & Overrides
+   ========================================================================== */
+.compactBtn {
+  background: linear-gradient(90deg, #ff8c42, #ff5722);
+  border: none;
+  color: #fff;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.compactBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 140, 66, 0.4);
+}
+
+.compactBtn:active {
+  transform: translateY(0);
+}
+
+.compactBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.actionButtons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Force the buttons inside the table to be smaller */
+.table .tf-btn {
+  padding: 6px 10px !important;
+  font-size: 0.85rem !important;
+  border-radius: 28px !important;
+  white-space: nowrap;
+  gap: 6px;
+}
+
+/* Compact action buttons inside table rows */
+.table .actionButtons .tf-btn {
+  min-width: 44px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.table .actionButtons .tf-btn svg {
+  margin-right: 6px;
+}
+
+.table .actionButtons .tf-btn.style-3 {
+  background: transparent;
+  border: 1px solid rgba(255, 140, 66, 0.12);
+  color: #a1a6c5;
+}
+
+.table .actionButtons .tf-btn:not(.style-3) {
+  background: linear-gradient(90deg, #ff8c42, #ff5722);
+  color: #fff;
+}
+
+@media (max-width: 991px) {
+  .bannerName {
+    display: none;
+  }
+  .table .actionButtons .tf-btn {
+    padding: 6px 8px !important;
+    height: 34px;
+  }
+  .table thead th:nth-child(2) {
+    width: 30%;
+  }
+}
+
+/* ==========================================================================
+   Expanded Row (Referral Dropdown)
+   ========================================================================== */
+.expandedRow td {
+  padding: 0 !important;
+  background: #0f123d;
+}
+
+.referralDropdown {
+  padding: 30px;
+  animation: slideDown 0.3s ease;
+}
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.referralHeader {
+  margin-bottom: 20px;
+}
+
+.referralTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.referralGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 15px;
+}
+
+.referralItem {
+  background: #1a1f4a;
+  border: 1px solid #2c326b;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
+
+.levelLabel {
+  font-size: 0.9rem;
+  color: #a1a6c5;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.percentValue {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #ff8c42;
+}
+
+/* ==========================================================================
+   Pagination & Loading States
+   ========================================================================== */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 30px 20px 10px;
+  border-top: 1px solid #2c326b;
+}
+
+.pageNumbers {
+  display: flex;
+  gap: 6px;
+}
+
+.pageNumber {
+  background: transparent;
+  border: 1px solid #2c326b;
+  color: #a1a6c5;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 48px;
+  font-size: 1rem;
+}
+
+.pageNumber:hover {
+  border-color: #ff8c42;
+  color: #ff8c42;
+}
+
+.pageNumber.active {
+  background: linear-gradient(90deg, #ff8c42, #ff5722);
+  color: white;
+  border-color: transparent;
+}
+
+.paginationInfo {
+  text-align: center;
+  padding: 10px 20px 30px;
+  color: #a1a6c5;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.loadingContainer,
+.emptyContainer {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid rgba(255, 140, 66, 0.2);
+  border-top-color: #ff8c42;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loadingText,
+.emptyText {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #a1a6c5;
+  font-weight: 600;
+}
+
+.emptyIcon {
+  width: 80px;
+  height: 80px;
+  color: #5c607c;
+  margin-bottom: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1199px) {
+  .table thead th,
+  .table tbody td {
+    padding: 12px 8px;
+    font-size: 0.85rem;
+  }
+  .cellWithIcon,
+  .dateCell,
+  .bannerPreview {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  .cellWithIcon svg,
+  .dateCell svg,
+  .bannerPreview svg {
+    align-self: center;
+  }
+}
+
+@media (max-width: 991px) {
+  .drawsCard {
+    padding: 0;
+  }
+  .table thead th,
+  .table tbody td {
+    padding: 10px 6px;
+    font-size: 0.8rem;
+  }
+  .referralDropdown {
+    padding: 20px;
+  }
+  .pagination {
+    flex-wrap: wrap;
+    padding: 20px 15px 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .table {
+    font-size: 0.75rem;
+  }
+  .table thead th,
+  .table tbody td {
+    padding: 8px 4px;
+  }
+  .drawIdBadge {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+  .compactBtn {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 576px) {
+  .table {
+    min-width: 1100px; /* Increased to accommodate more columns */
+  }
+  .table thead th,
+  .table tbody td {
+    white-space: nowrap;
+  }
+  .referralGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+}

@@ -1,0 +1,236 @@
+/* ==========================================================================
+   Modal Overlay & Content (Dark Theme)
+   ========================================================================== */
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Dark overlay matching the dashboard feel */
+  background: rgba(15, 18, 61, 0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modalContent {
+  /* Dark card background */
+  background: #1a1f4a;
+  border: 1px solid #2c326b;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   Header, Calendar, and Time Picker
+   ========================================================================== */
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  /* Dark border */
+  border-bottom: 1px solid #2c326b;
+}
+
+.modalHeader h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  /* White text */
+  color: #ffffff;
+}
+
+.monthYearSelector {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+
+.monthYearSelector button {
+  /* Transparent background with dark border */
+  background: transparent;
+  border: 1px solid #2c326b;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Subtle text color */
+  color: #a1a6c5;
+}
+
+.monthYearSelector button:hover {
+  /* Highlight with primary orange on hover */
+  border-color: #ff8c42;
+  color: #ff8c42;
+  background: #0f123d;
+}
+
+.monthYearDisplay {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.calendarHeader {
+  text-align: center;
+  font-weight: 600;
+  color: #a1a6c5;
+  font-size: 0.875rem;
+  padding: 0.5rem;
+}
+
+.calendarDay {
+  color: #ffffff;
+  aspect-ratio: 1;
+  border: 1px solid #2c326b;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  background: transparent;
+}
+
+.calendarDay:hover:not(.disabled):not(.otherMonth) {
+  border-color: #ff8c42;
+  background: #0f123d;
+}
+
+.calendarDay.selected {
+  /* Primary orange gradient for selected day */
+  background: linear-gradient(90deg, #ff8c42, #ff5722);
+  color: white;
+  border-color: transparent;
+}
+
+.calendarDay.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  background: rgba(15, 18, 61, 0.5);
+  color: #5c607c;
+}
+
+.calendarDay.otherMonth {
+  opacity: 0.4;
+  cursor: default;
+  color: #5c607c;
+}
+
+.calendarDay.today {
+  /* Highlight today's date with orange border */
+  border-color: #ff8c42;
+  font-weight: 700;
+}
+
+.timePicker {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.timeInput {
+  width: 100%;
+  padding: 0.75rem;
+  /* Dark input styles */
+  background: #0f123d;
+  border: 1px solid #2c326b;
+  color: #ffffff;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.timeInput:focus {
+  outline: none;
+  border-color: #ff8c42;
+  box-shadow: 0 0 0 3px rgba(255, 140, 66, 0.2);
+}
+
+/* ==========================================================================
+   Action Buttons
+   ========================================================================== */
+
+.modalActions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Secondary button (Cancel) */
+.btnSecondary {
+  flex: 1;
+  padding: 0.875rem;
+  border: 1px solid #2c326b;
+  background: transparent;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #a1a6c5;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btnSecondary:hover {
+  border-color: #ff8c42;
+  color: #ff8c42;
+}
+
+/* Primary button (Confirm) */
+.btnPrimary {
+  flex: 1;
+  padding: 0.875rem;
+  border: none;
+  background: linear-gradient(90deg, #ff8c42, #ff5722);
+  color: white;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btnPrimary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 107, 66, 0.4);
+}

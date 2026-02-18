@@ -1,0 +1,86 @@
+@use "../abstracts/mixin";
+@use "../abstracts/variable";
+
+.nice-select {
+    border-radius: 16px;
+    border: 1px solid var(--Border) ;
+    padding: 13px 0px 13px 9px ;
+    width: 100%;
+    position: relative;
+    @include mixin.d-flex();
+    align-items: center;
+    height: 46px;
+    gap: 5px;
+    cursor: pointer;
+    .icon {
+        font-size: 20px;
+    }
+    &::after {
+        content: "\e944";
+        right: 10px;
+        color: rgba(255, 255, 255, 0.3);
+        font-family: variable.$fontIcon;
+        font-size: 20px;
+        position: absolute;
+        transform: rotate(0);
+        @include mixin.transition3();
+    }
+    > span {
+        font-weight: 759;
+        font-size: 14px;
+        line-height: 18.52px;
+        color: var(--White);
+    }
+    > .list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        border: 1px solid var(--Border);
+        border-radius: 12px;
+        width: 100%;
+        padding: 10px;
+        background-color: var(--Bg-2);
+        z-index: 5;
+        opacity: 0;
+        visibility: hidden;
+        @include mixin.transition3();
+        .option {
+            width: 100%;
+            padding: 10px 10px;
+            color: var(--White);
+            position: relative;
+            border-radius: 12px;
+            cursor: pointer;
+            &:not(:last-child){
+                margin-bottom: 3px;
+            }
+            &:hover {
+                background-color: var(--Bg);
+            }
+            &.selected {
+                color: var(--Main-color);
+                background-color: var(--Bg);
+                &::after {
+                    position: absolute;
+                    font-family: variable.$fontIcon !important;
+                    content: "\e90f";
+                    right: 18px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+    &.open {
+        border-color: var(--Border) !important;
+        z-index: 50;
+        &::after {
+            transform: rotate(-180deg);
+            color: var(--White);
+        }
+        .list {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}

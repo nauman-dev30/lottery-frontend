@@ -1,0 +1,64 @@
+@use "../abstracts/mixin";
+
+.swiper-container {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+}
+
+.pagination-rectangle {
+    padding-top: 22px;
+    position: unset;
+    .swiper-pagination-bullet {
+        margin: 0 2.5px !important;
+        width: 50px;
+        height: 4px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 0;
+        opacity: 1;
+        &.swiper-pagination-bullet-active {
+            background-color: rgba(96, 85, 255, 1);
+        }
+    }
+    &.style-1 {
+        .swiper-pagination-bullet.swiper-pagination-bullet-active {
+            background-color: var(--Main-color);
+        }
+    }
+}
+
+.section-testimonial-home-2 {
+    .swiper-wrapper {
+        position: relative;
+    }
+    .button {
+        width: 66px;
+        height: 66px;
+        @include mixin.flex(center, center);
+        color: var(--White);
+        font-size: 24px;
+        border-radius: 999px;
+        border: 1px solid var(--Border);
+        @include mixin.transition3();
+
+        &:hover{
+            color: var(--Main-color);
+        }
+        &::after {
+            display: none;
+        }
+    }
+    .testimonial-next {
+        right: 15.8%;
+        top: 46%;
+    }
+    .testimonial-prev {
+        left: 17.4%;
+        top: 46%;
+    }
+}
+

@@ -1,0 +1,1024 @@
+@use "abstracts/mixin";
+
+
+@media (min-width: 1601px) {
+    .slide-title-home-3 {
+        justify-content: center;
+    }
+}
+@media (max-width: 1600px) {
+    .slide-title-home-3 {
+        justify-content: center !important;
+    }
+}
+@media (min-width: 991px) {
+    .wg-our-jackpot {
+        .content {
+            flex: none;
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .layout-wrap {
+        .header-dashboard {
+            padding-left: 92px;
+        }
+    }
+
+    .page-title-home {
+        &.style-2 {
+            .out {
+                display: none;
+            }
+            .page-title-home-content {
+                .image {
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    .button-show-hide {
+        display: block;
+    }
+
+    .sidebar-dashboard {
+        right: -270px;
+
+        &.active {
+            right: 19px;
+        }
+    }
+
+    .button-sidebar-dashboard {
+        display: block;
+        position: fixed;
+        right: 19px;
+        top: 92px;
+
+        &.active {
+            i::before {
+                content: "\e911";
+            }
+        }
+    }
+
+    .section-menu-left {
+        left: -300px;
+        opacity: 0;
+        visibility: hidden;
+
+        &.active {
+            left: 0;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    .section-menu-left-mobile {
+        display: none;
+    }
+
+    .main-content-dashboard-wrap {
+        .main-content-dashboard {
+            padding-right: 0;
+            padding-left: 0;
+            width: 100%;
+        }
+    }
+}
+
+@media (min-width: 1300px) {
+    .winning-number {
+        .content {
+            padding: 0 81px;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .s-succes-story {
+        .wg-counter {
+            justify-content: center;
+            gap: 50px;
+            .counter-item {
+                .text {
+                    padding: 0px 15px !important;
+                }
+            }
+        }
+    }
+    .s-game-play {
+        .game-play {
+            width: 100%;
+            flex-wrap: wrap;
+            .style-left {
+                max-width: unset;
+                width: 100%;
+            }
+            .style-right {
+                margin-left: 0px;
+                max-width: unset;
+                flex-direction: unset;
+                width: 100%;
+                .slot-game {
+                    width: 50%;
+                    .content {
+                    }
+                    .image {
+                        img {
+                            max-width: 300px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .slide-title-home-3 {
+        .image {
+            height: 100%;
+            @include mixin.flex(center, center);
+        }
+    }
+    .section-testimonial-home-2 {
+        .testimonial-next {
+            right: 15px;
+            top: 46%;
+        }
+        .testimonial-prev {
+            left: 15px;
+            top: 46%;
+        }
+    }
+    .history-main {
+        .box-history {
+            max-width: unset;
+            width: 45%;
+        }
+    }
+}
+
+@media (max-width: 1150px) {
+    .section-getstarted {
+        .grid-column-3 {
+            .item {
+                &.arow-1 {
+                    left: 224px;
+                }
+                &.arow-2 {
+                    right: 224px;
+                }
+            }
+        }
+    }
+    .wallet-withdrawal-form {
+        margin-bottom: 30px;
+    }
+    .faq-content {
+        padding: 0;
+        border: none;
+    }
+    .wallet-withdrawal-note {
+        padding-top: 30px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .game-play {
+        .style-right {
+            .image {
+                img {
+                    max-width: 190px !important;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .wg-counter .counter-item .number-counter {
+        font-size: 50px;
+        line-height: 62px;
+        justify-content: center !important;
+        .plus::after {
+            font-size: 30px !important;
+            line-height: 42px !important;
+        }
+    }
+    .page-title-home-1 {
+        .item-2,
+        .item-3 {
+            display: none;
+        }
+        .item-car {
+            img {
+                max-width: 300px !important;
+                height: auto;
+                object-fit: cover;
+            }
+        }
+    
+        .title,
+        span {
+            font-size: 30px !important;
+            line-height: 40px !important;
+        }
+    
+        .item-1 {
+            top: 15% !important;
+        }
+    }
+
+    .section-cta-inner {
+        padding: 60px 15px 15px !important;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    text-align: center;
+
+
+        .cta-middle {
+            .icon {
+                top: -10% !important;
+            }
+        }
+    }
+    .banner-img {
+        display: none;
+    }
+    .banner-inner {
+        @include mixin.flex(center, center);
+    }
+    .banner-left {
+        @include mixin.flex(center, center);
+        flex-direction: column;
+        text-align: center;
+
+        .banner {
+            display: none;
+        }
+    }
+    .banner-inner {
+        @include mixin.d-flex();
+
+        .image-1 {
+            position: relative !important;
+            top: 0 !important;
+            right: 0 !important;
+        }
+
+        .image-2 {
+            display: none !important;
+        }
+
+        .image-3 {
+            display: none !important;
+        }
+
+        .image-4 {
+            display: none !important;
+        }
+    }
+
+    .page-title-dashboard {
+        .content {
+            @include mixin.flex(center, center);
+            flex-direction: column;
+
+            .image {
+                display: none;
+            }
+        }
+    }
+    .section-online-lottery {
+        &.page-home-1 {
+            .grid-column-4 {
+                gap: 90px 30px;
+            }
+        }
+    }
+    .wg-infomation {
+        .right {
+            ul {
+                gap: 30px 0px !important;
+                li {
+                    width: 51%;
+                }
+            }
+            .item {
+            }
+        }
+    }
+    .slide-title-home-3 {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        .content {
+            @include mixin.flex(center, center);
+            padding: 0px !important;
+            flex-direction: column;
+        }
+        .image {
+            @include mixin.flex(unset, unset);
+            height: unset;
+            img {
+                padding: 0px !important;
+            }
+            .item-1 {
+                display: none;
+            }
+        }
+    }
+    .s-succes-story {
+        .wg-counter {
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+    }
+    .wg-counter {
+        gap: 30px;
+        justify-content: center;
+    }
+    .page-contest-details {
+        .description-page {
+            .image-item {
+                gap: 20px !important;
+            }
+        }
+    }
+    .grid-column-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .profile-avatar,
+    .profile-infor,
+    .profile-security {
+        flex-wrap: wrap;
+    }
+    .user-wrap {
+        margin-bottom: 30px;
+        height: unset !important;
+        gap: 30px;
+    }
+    .register-wrap,
+    .login-wrap {
+        max-width: unset;
+        flex-wrap: wrap;
+        height: unset;
+        .image {
+            display: none;
+        }
+        .content {
+            border-radius: 20px;
+        }
+    }
+    .blog-single-main {
+        padding-bottom: 50px;
+    }
+    .grid-column-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #footer {
+        .footer-main {
+            .widget-footer {
+                &.dowload-app,
+                &.help {
+                    .widget-title {
+                        margin-bottom: 13px;
+                    }
+                }
+                &.dowload-app {
+                    .bottom {
+                        .widget-title {
+                            margin-bottom: 13px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .wg-our-jackpot {
+        margin-bottom: 30px;
+    }
+    .wg-get-ticket {
+        .wrap-image {
+            margin: 0 auto 28px;
+        }
+    }
+    .wrap-about-us {
+        .item-1 {
+            display: none;
+        }
+    }
+    .tf-wrap-sort {
+        flex-wrap: wrap;
+        .nice-select {
+            width: 49%;
+        }
+        .form-search {
+            width: 49%;
+        }
+    }
+    .winning-number {
+        .content {
+            .list-number {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    }
+    .grid-column-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .section-getstarted {
+        .grid-column-3 {
+            grid-template-columns: repeat(3, 1fr);
+            .item {
+                max-width: 130px;
+                top: -40px;
+            }
+        }
+    }
+    .wallet-withdrawal .top {
+        flex-wrap: wrap;
+    }
+    .grid-layout-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    br {
+        display: none;
+    }
+    .header-dashboard {
+        .header-right {
+            gap: 10px;
+        }
+
+        .account .popup-top .name {
+            display: none;
+        }
+
+        .header-wallet {
+            .tf-btn {
+                padding: 0 14.5px;
+
+                > span {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .history-main {
+        &::after {
+            left: 30px;
+        }
+
+        .box-history {
+            width: 100%;
+            margin-left: 99px;
+            position: relative;
+            padding-top: 0px;
+            &.style-1 {
+                &::before {
+                    left: 19px;
+                    margin-top: 320px;
+                }
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 25px;
+                height: 25px;
+                top: 48%;
+                left: -79px !important;
+                margin-top: 0px !important;
+                background-color: var(--Sub-color-2);
+                border: 7px solid var(--White);
+                border-radius: 50%;
+                z-index: 5;
+            }
+
+            &::after {
+                margin-top: 0px !important;
+                bottom: 49.8%;
+                left: -70px !important;
+                width: 70px;
+            }
+
+            img {
+                max-height: 400px;
+            }
+        }
+    }
+
+    #header-main {
+        .header-inner-wrap {
+            padding: 22px 0;
+
+            .header-logo {
+                width: 130px;
+            }
+
+            .main-menu {
+                display: none;
+            }
+
+            .header-right {
+                gap: 15px;
+                .btn-buy-tickets a {
+                    padding: 0 15px;
+                }
+                .mobile-button {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .section-blog-list {
+        .tf-sidebar {
+            margin-top: 40px;
+        }
+    }
+}
+@media (max-width: 768px) {
+    h1 {
+        font-size: 45px !important;
+        line-height: 50px !important;
+    }
+    .main-content {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .heading-section {
+        margin-bottom: 30px !important;
+        .title {
+            font-size: 35px;
+            line-height: 45px;
+        }
+    }
+
+    .page-title-home {
+        &.style-2 {
+            padding: 140px 0 80px;
+            .page-title-home-content {
+                flex-wrap: wrap;
+                .image {
+                    margin: 0 auto;
+                    max-width: 400px;
+                }
+                .content {
+                    max-width: 100%;
+                    text-align: center;
+                    margin-bottom: 40px;
+                    .tf-btn {
+                        margin: 0 auto;
+                    }
+                }
+            }
+            .in {
+                display: none;
+            }
+        }
+    }
+
+    .section-blog-grid {
+        .grid-layout-3 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    .member-item {
+        .wrap-image {
+            img {
+                width: 100%;
+            }
+        }
+    }
+    .form-help {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        .wrap-form {
+            padding: 0 15px;
+        }
+    }
+    .tf-wrap-sort {
+        flex-wrap: wrap;
+        .nice-select {
+            width: 100%;
+        }
+        .form-search {
+            width: 100%;
+        }
+    }
+    .table-latest-winners {
+        overflow-x: auto !important;
+        .title,
+        .item-table {
+            width: max-content;
+            gap: 0;
+            div:nth-child(2) {
+                width: 150px;
+            }
+        }
+    }
+    .table-lottery-results {
+        overflow-x: auto !important;
+        .title,
+        .item-table {
+            width: max-content;
+            gap: 0;
+            div:nth-child(1) {
+                width: 210px;
+            }
+            div:nth-child(2) {
+                width: 150px;
+            }
+        }
+    }
+    .wg-infomation {
+        .left {
+            margin-bottom: 30px;
+        }
+    }
+    .the-vault-content {
+        .right {
+            flex-wrap: wrap;
+            > div {
+                width: 100%;
+            }
+        }
+    }
+    .s-how-it-work {
+        .heading-section {
+            padding-top: 50px;
+        }
+    }
+    .wg-our-jackpot {
+        .content {
+            text-align: center;
+            .title {
+                font-size: 35px;
+                line-height: 45px;
+                margin-bottom: 30px;
+            }
+            .time {
+                .js-countdown {
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+    .section-getstarted {
+        .grid-column-3 {
+            grid-template-columns: repeat(1, 1fr);
+            .item {
+                display: none;
+            }
+            .guide-number {
+                margin: 0 auto 20px;
+            }
+        }
+    }
+    .customer-support-item {
+        margin-bottom: 40px;
+        .btn-customer-support-item {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    .section-raffles {
+        .start-now {
+            margin-top: 20px;
+        }
+    }
+    .section-faq {
+        .wrap-image {
+            margin-bottom: 30px;
+        }
+    }
+    .section-support {
+        margin-bottom: 0px;
+    }
+    .section-testimonial-home-2 {
+        .wrap-testimonial {
+            padding-bottom: 50px;
+        }
+    }
+    .main-content {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .tf-spacing-1 {
+        padding-bottom: 40px;
+    }
+    .tf-spacing-2 {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .customer-support-item {
+        margin-bottom: 40px;
+        .btn-customer-support-item {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .section-faq .content .title {
+        font-size: 30px;
+        line-height: 42px;
+    }
+
+    .get-started-content {
+        padding-bottom: 30px;
+    }
+
+    .get-started-image {
+        .image-1 {
+            position: relative !important;
+        }
+
+        .coin-image-4 {
+            display: none;
+        }
+    }
+
+    .banner-inner {
+        padding: 15px !important;
+    }
+    .wg-infomation {
+        .left {
+            margin: 0px !important;
+        }
+        .right {
+            margin: 30px 0px 0px !important;
+        }
+    }
+    .the-vault-content {
+        margin-top: 30px;
+    }
+    .s-ticket-online {
+        .ticket-online-wrap {
+            flex-wrap: wrap;
+            padding: 20px;
+
+            justify-content: center;
+            .content {
+                padding: 0px;
+            }
+            .image {
+                padding: 10px 0px 0px 0px;
+                img {
+                    width: 100%;
+                    max-width: unset;
+                }
+            }
+        }
+    }
+    .js-countdown {
+        &.style-2 {
+            .countdown__timer {
+                gap: 28px;
+
+                .countdown__item {
+                    width: 100px;
+                    height: 100px;
+                    &::after {
+                        right: -20px;
+                    }
+                    .countdown__value {
+                        font-size: 35px;
+                    }
+                }
+            }
+        }
+    }
+    .s-get-started {
+        .wrapper {
+            margin-bottom: 30px;
+        }
+    }
+    .game-play {
+        .slot-game {
+            justify-content: space-between !important;
+        }
+        .style-left {
+            .game-1 {
+                .content {
+                    padding: 20px 0px 20px 20px !important;
+                    justify-content: space-around;
+                    .image-item {
+                        margin-bottom: 16px;
+                        img {
+                            max-width: 86px !important;
+                        }
+                    }
+                    .title {
+                        font-size: 14px;
+                    }
+                    .text-color-clip {
+                        font-size: 30px;
+                        margin-bottom: 20px;
+                        span {
+                            font-size: 20px;
+                        }
+                    }
+                    .tf-btn {
+                        font-size: 13px;
+                        height: 46px;
+                        padding: 0px 20px;
+                    }
+                }
+                .image {
+                    margin-left: 0px !important;
+
+                    img {
+                        width: 100%;
+                        max-width: 362px;
+                    }
+                }
+            }
+        }
+        .style-right {
+            flex-wrap: wrap;
+            height: unset;
+            .slot-game {
+                width: 100% !important;
+                height: unset;
+                justify-content: space-around;
+                .image {
+                    img {
+                        max-width: unset !important;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    .grid-layout-4 {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .s-play-for-fun {
+        .main-section {
+            flex-wrap: wrap;
+        }
+    }
+    .grid-column-3 {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .header-dashboard {
+        .header-notification,
+        .header-coins,
+        .header-wallet {
+            display: none;
+        }
+    }
+    .guide-wrap {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 665px) {
+    .main-content {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    #footer {
+        .footer-bottom {
+            padding: 30px 0;
+
+            .wrapper {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+                ul {
+                    gap: 15px !important;
+                }
+            }
+        }
+    }
+
+    .box-history {
+        &::after {
+            bottom: 49.5% !important;
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .js-countdown {
+        &.style-2 {
+            .countdown__timer {
+                gap: 20px;
+                padding: 0px 0px 40px 0px;
+                .countdown__item {
+                    padding: 5px;
+                    width: 70px;
+                    height: 70px;
+                    &::after {
+                        right: -15px;
+                        font-size: 30px;
+                    }
+                    &::before {
+                        font-size: 13px;
+                        bottom: -26px;
+                    }
+                    .countdown__value {
+                        font-size: 25px;
+                    }
+                }
+            }
+        }
+    }
+    .verified-wrap {
+        &:not(.type-confirm) {
+            flex-wrap: wrap;
+            justify-content: unset;
+            gap: 20px 0px !important;
+            .verified-item {
+                justify-content: unset !important;
+                width: 50%;
+            }
+        }
+    }
+    .login-wrap,
+    .register-wrap {
+        .content {
+            .close-form {
+                top: 10px;
+                right: 10px;
+            }
+        }
+    }
+    .social-sign-list {
+        flex-wrap: wrap;
+    }
+    .entry-meta {
+        flex-wrap: wrap;
+        gap: 20px 0px !important;
+        > * {
+            width: 50%;
+            justify-content: flex-start !important;
+        }
+    }
+    .customer-support-item {
+        padding: 20px 20px 45px;
+        flex-direction: column;
+        text-align: center;
+    }
+    .grid-column-4 {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .section-blog-grid {
+        .grid-layout-3 {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+    .table-statistical {
+        overflow-x: auto !important;
+        .title,
+        .item-table {
+            width: max-content;
+            gap: 0;
+            div:nth-child(1),
+            div:nth-child(2),
+            div:nth-child(3),
+            div:nth-child(4) {
+                width: 150px;
+            }
+        }
+    }
+    .price-wrap {
+        .wrap-quatity {
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+    }
+    footer {
+        .footer-menu {
+            .menu {
+                padding-bottom: 10px;
+            }
+        }
+    }
+    .winning-number {
+        padding: 30px 15px;
+    }
+    .wg-our-jackpot {
+        flex-wrap: wrap;
+        .content {
+            width: 100%;
+        }
+        .wrap-image {
+            margin: 30px auto;
+        }
+    }
+}
