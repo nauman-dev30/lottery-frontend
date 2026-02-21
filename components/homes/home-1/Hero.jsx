@@ -55,7 +55,7 @@ export default function Hero() {
                 <p className="title">
                   Win Big With
                   <span className="d-block animationtext clip">
-                    <TyperAnimation strings={["Tronado Lottery."]} />
+                    <TyperAnimation strings={["Tronado Lottery"]} />
                   </span>
                 </p>
                 <p className="sub-title">

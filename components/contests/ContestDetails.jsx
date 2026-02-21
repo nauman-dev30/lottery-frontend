@@ -69,9 +69,9 @@ export default function ContestDetails({ contest, id }) {
   }, [id, config, dispatch, refreshCounter]);
 
   const sponsorAddress =
-    !userData?.sponserAddress || userData?.sponserAddress === "No Sponser Found"
+    !userData?.sponsorAddress || userData?.sponsorAddress === "No Sponsor Found" || userData?.sponserAddress === "No Sponser Found"
       ? ownerAddress
-      : userData.sponserAddress;
+      : (userData.sponsorAddress || userData.sponserAddress);
   console.log("sponsorAddress s", sponsorAddress);
   const ticketPrice = trdoDrawInfo?.ticketPrice;
   // console.log("userData S", userData);
@@ -99,17 +99,9 @@ export default function ContestDetails({ contest, id }) {
 
 
     console.log(userData, "usersssssssssssssssssssssssssss");
-    let sponserWalletAddress;
-
-
-
-    console.log("userData", userData.refCode, ticketPrice, trdoDecimals, currentDrawId, userData?.sponsorAddress);
-    if (userData?.sponsorAddress == "No Sponsor Found") {
-
-      sponserWalletAddress = ownerAddress;
-    } else {
-      sponserWalletAddress = userData?.sponsorAddress;
-    }
+    console.log("userData", userData.refCode, ticketPrice, trdoDecimals, currentDrawId, sponsorAddress);
+    // Reuse the globally computed sponsorAddress which correctly falls back to ownerAddress
+    const sponserWalletAddress = sponsorAddress;
 
     // Use the specific draw ID from the displayed draw info
     const targetDrawId = trdoDrawInfo?.drawId || currentDrawId;
