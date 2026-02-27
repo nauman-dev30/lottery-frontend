@@ -186,6 +186,25 @@ export default function DashboardData() {
             </div>
           </div>
 
+          <div className="opbnb-bridge-card">
+            <div className="bridge-card-content">
+              <div className="bridge-icon">🌉</div>
+              <h3 className="bridge-title">opBNB Bridge</h3>
+              <p className="bridge-description">
+                Bridge your assets to opBNB network quickly and securely via the official BNB Chain bridge.
+              </p>
+              <a
+                href="https://opbnb-bridge.bnbchain.org/deposit"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="tf-btn btn-lg style-1"
+              >
+                <span>Open Bridge</span>
+                <i className="icon-right" />
+              </a>
+            </div>
+          </div>
+
           <style jsx>{`
             .featured-draw-banner {
               background: linear-gradient(135deg, rgba(23, 26, 48, 0.9) 0%, rgba(255, 107, 74, 0.1) 100%);
@@ -267,6 +286,36 @@ export default function DashboardData() {
               padding: 30px 50px;
               background: rgba(255,255,255,0.05);
               border-radius: 20px;
+            }
+            .opbnb-bridge-card {
+              background: linear-gradient(135deg, rgba(23, 26, 48, 0.95) 0%, rgba(243, 186, 47, 0.15) 100%);
+              border: 1px solid rgba(243, 186, 47, 0.25);
+              border-radius: 20px;
+              padding: 40px;
+              margin-bottom: 30px;
+              text-align: center;
+              transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            }
+            .opbnb-bridge-card:hover {
+              border-color: rgba(243, 186, 47, 0.5);
+              box-shadow: 0 8px 30px rgba(243, 186, 47, 0.1);
+            }
+            .bridge-icon {
+              font-size: 48px;
+              margin-bottom: 15px;
+            }
+            .bridge-title {
+              color: #fff;
+              font-size: 24px;
+              font-weight: 700;
+              margin-bottom: 10px;
+            }
+            .bridge-description {
+              color: #a8b3cf;
+              font-size: 15px;
+              max-width: 500px;
+              margin: 0 auto 25px;
+              line-height: 1.6;
             }
           `}</style>
           <Information />
